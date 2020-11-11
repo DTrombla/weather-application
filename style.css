@@ -1,0 +1,39 @@
+nav{
+    background-color:#565656;
+    color: white;
+    padding: 20px;
+    height: 100px;
+    text-align: center;
+}
+p{
+    font-size: 15px;
+}
+#rcorners{
+    border-radius: 25px;
+    background: #3f7df0;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+  }
+
+#intense{
+    border-radius: 25px;
+    background: #ec4f4f;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+}
+#moderate{
+    border-radius: 25px;
+    background: #f7c14e;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}
+#safe{
+    border-radius: 25px;
+    background: #61be54;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+}

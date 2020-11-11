@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h1>Weather Dashboard</h1>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <h2>Search for a City:</h2>
+                    <input type="text" class="form-control search" placeholder="Search for City">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary searchBtn" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                  </div>
+                  <div class="history">
+                
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="date"></h1>
+                        <span class="icon"></span>
+                        <h4 class="temp">Temperature: Place Holder</h4>
+                        <h4 class="humidity">Humidity: Place Holder</h4>
+                        <h4 class="wind">Wind Speed: Place Holder</h4>
+                        <h4>UV Index: <span class="uv">Place Holder</span></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id = "rcorners" class="col-md-2">
+                        <h5 class="date3"></h5>
+                        <div class="icon3"></div>
+                        <p class="temp3"></p>
+                        <p class="humidity3"></p>
+                    </div>
+                    <div id = "rcorners" class="col-md-2">
+                        <h5 class="date11"></h5>
+                        <div class="icon11"></div>
+                        <p class="temp11"></p>
+                        <p class="humidity11"></p>
+                    </div>
+                    <div id = "rcorners" class="col-md-2">
+                        <h5 class="date19"></h5>
+                        <div class="icon19"></div>
+                        <p class="temp19"></p>
+                        <p class="humidity19"></p>
+                    </div>
+                    <div id = "rcorners" class="col-md-2">
+                        <h5 class="date27"></h5>
+                        <div class="icon27"></div>
+                        <p class="temp27"></p>
+                        <p class="humidity27"></p>
+                    </div>
+                    <div id = "rcorners" class="col-md-2">
+                        <h5 class="date35"></h5>
+                        <div class="icon35"></div>
+                        <p class="temp35"></p>
+                        <p class="humidity35"></p>
+                    </div>
+                    
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
