@@ -210,7 +210,7 @@ function loadInfoSearch(){
             
     })
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         header: origin,
         url: queryURL,
