@@ -12,14 +12,15 @@ function lastSearch(){
     newCity.append(newBtn);
     $(".history").prepend(newCity);
     var city = last
-    var queryURL =  "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL =  "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
+        header: origin,
         url: queryURL,
         method:"GET"
     }).then(function(response){
         console.log(response)
             var d = new Date();
-            var temp = (((1.8)*(response.main.temp-273)+32).toFixed(1)).toString()
+            var temp = (((1.8)*(response.main.temp-273)+32).toFixed(2)).toString()
             var date = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
             var weather = response.weather[0].icon
             $(".date").html(response.name+ "  " +date)
@@ -31,8 +32,9 @@ function lastSearch(){
             $(".wind").html("Wind Speed: "+response.wind.speed+"MPH")
             var lat = response.coord.lat
             var lon = response.coord.lon
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+            var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
             $.ajax({
+                header: origin,
                 url: queryURL,
                 method:"GET"
             }).then(function(response){
@@ -50,13 +52,14 @@ function lastSearch(){
             })
     })
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
+        header: origin,
         url: queryURL,
         method:"GET"
     }).then(function(response){
         for(var i = 3; i < 36; i=i+8){
-            var temp = (((1.8)*(response.list[i].main.temp-273)+32).toFixed(1)).toString()
+            var temp = (((1.8)*(response.list[i].main.temp-273)+32).toFixed(2)).toString()
             var date = response.list[i].dt_txt.substring(0,10)
             var weather = response.list[i].weather[0].icon
             $(".date"+i).html(date)
@@ -99,14 +102,15 @@ function loadInfo(){
     var city = event.target.textContent
     var last = city
     localStorage.setItem("last",last)
-    var queryURL =  "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL =  "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
+        header: origin,
         url: queryURL,
         method:"GET"
     }).then(function(response){
         console.log(response)
             var d = new Date();
-            var temp = (((1.8)*(response.main.temp-273)+32).toFixed(1)).toString()
+            var temp = (((1.8)*(response.main.temp-273)+32).toFixed(2)).toString()
             var date = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
             var weather = response.weather[0].icon
             $(".date").html(response.name+ "  " +date)
@@ -118,8 +122,9 @@ function loadInfo(){
             $(".wind").html("Wind Speed: "+response.wind.speed+"MPH")
             var lat = response.coord.lat
             var lon = response.coord.lon
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+            var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
             $.ajax({
+                header: origin,
                 url: queryURL,
                 method:"GET"
             }).then(function(response){
@@ -137,13 +142,14 @@ function loadInfo(){
             })
     })
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
+        header: origin,
         url: queryURL,
         method:"GET"
     }).then(function(response){
         for(var i = 3; i < 36; i=i+8){
-            var temp = (((1.8)*(response.list[i].main.temp-273)+32).toFixed(1)).toString()
+            var temp = (((1.8)*(response.list[i].main.temp-273)+32).toFixed(2)).toString()
             var date = response.list[i].dt_txt.substring(0,10)
             var weather = response.list[i].weather[0].icon
             $(".date"+i).html(date)
@@ -163,14 +169,15 @@ function loadInfo(){
 }
 function loadInfoSearch(){
     var city = $(".search").val()
-    var queryURL =  "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL =  "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
+        header: origin,
         url: queryURL,
         method:"GET"
     }).then(function(response){
         console.log(response)
             var d = new Date();
-            var temp = (((1.8)*(response.main.temp-273)+32).toFixed(1)).toString()
+            var temp = (((1.8)*(response.main.temp-273)+32).toFixed(2)).toString()
             var date = d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()
             var weather = response.weather[0].icon
             $(".date").html(response.name+ "  " +date)
@@ -182,8 +189,9 @@ function loadInfoSearch(){
             $(".wind").html("Wind Speed: "+response.wind.speed+"MPH")
             var lat = response.coord.lat
             var lon = response.coord.lon
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+            var queryURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
             $.ajax({
+                header: origin,
                 url: queryURL,
                 method:"GET"
             }).then(function(response){
@@ -204,11 +212,12 @@ function loadInfoSearch(){
 
     var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
+        header: origin,
         url: queryURL,
         method:"GET"
     }).then(function(response){
         for(var i = 3; i < 36; i=i+8){
-            var temp = (((1.8)*(response.list[i].main.temp-273)+32).toFixed(1)).toString()
+            var temp = (((1.8)*(response.list[i].main.temp-273)+32).toFixed(2)).toString()
             var date = response.list[i].dt_txt.substring(0,10)
             var weather = response.list[i].weather[0].icon
             $(".date"+i).html(date)
@@ -225,6 +234,8 @@ function loadInfoSearch(){
     })
 }
 
+
+
 if(localStorage.getItem("last") == null){
 
 }
@@ -234,7 +245,7 @@ else{
 
 $(document).on("click", '.city', function(event){
     loadInfo()
-})
+});
 
 
 $(".searchBtn").on("click", function(){
