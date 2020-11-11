@@ -12,7 +12,7 @@ function lastSearch(){
     newCity.append(newBtn);
     $(".history").prepend(newCity);
     var city = last
-    var queryURL =  "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL =  "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         url: queryURL,
         method:"GET"
@@ -25,13 +25,13 @@ function lastSearch(){
             $(".date").html(response.name+ "  " +date)
             $(".temp").html("Temperature: " + temp + "°F")
             $(".humidity").html("Humidity: " + response.main.humidity + "%")
-            var icon = $("<img src = 'http://openweathermap.org/img/wn/" + weather + "@2x.png'>")
+            var icon = $("<img src = 'https://openweathermap.org/img/wn/" + weather + "@2x.png'>")
             $(".icon").html("")
             $(".icon").append(icon)
             $(".wind").html("Wind Speed: "+response.wind.speed+"MPH")
             var lat = response.coord.lat
             var lon = response.coord.lon
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+            var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
             $.ajax({
                 url: queryURL,
                 method:"GET"
@@ -50,7 +50,7 @@ function lastSearch(){
             })
     })
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         url: queryURL,
         method:"GET"
@@ -62,7 +62,7 @@ function lastSearch(){
             $(".date"+i).html(date)
             $(".temp"+i).html("Temperature: " + temp + "°F")
             $(".humidity"+i).html("Humidity: " + response.list[i].main.humidity + "%")
-            var icon = $("<img src = 'http://openweathermap.org/img/wn/" + weather + ".png'>")
+            var icon = $("<img src = 'https://openweathermap.org/img/wn/" + weather + ".png'>")
             $(".icon"+i).html("")
             $(".icon"+i).append(icon)
 
@@ -99,7 +99,7 @@ function loadInfo(){
     var city = event.target.textContent
     var last = city
     localStorage.setItem("last",last)
-    var queryURL =  "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL =  "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         url: queryURL,
         method:"GET"
@@ -112,13 +112,13 @@ function loadInfo(){
             $(".date").html(response.name+ "  " +date)
             $(".temp").html("Temperature: " + temp + "°F")
             $(".humidity").html("Humidity: " + response.main.humidity + "%")
-            var icon = $("<img src = 'http://openweathermap.org/img/wn/" + weather + "@2x.png'>")
+            var icon = $("<img src = 'https://openweathermap.org/img/wn/" + weather + "@2x.png'>")
             $(".icon").html("")
             $(".icon").append(icon)
             $(".wind").html("Wind Speed: "+response.wind.speed+"MPH")
             var lat = response.coord.lat
             var lon = response.coord.lon
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+            var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
             $.ajax({
                 url: queryURL,
                 method:"GET"
@@ -137,7 +137,7 @@ function loadInfo(){
             })
     })
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         url: queryURL,
         method:"GET"
@@ -149,7 +149,7 @@ function loadInfo(){
             $(".date"+i).html(date)
             $(".temp"+i).html("Temperature: " + temp + "°F")
             $(".humidity"+i).html("Humidity: " + response.list[i].main.humidity + "%")
-            var icon = $("<img src = 'http://openweathermap.org/img/wn/" + weather + ".png'>")
+            var icon = $("<img src = 'https://openweathermap.org/img/wn/" + weather + ".png'>")
             $(".icon"+i).html("")
             $(".icon"+i).append(icon)
 
@@ -163,7 +163,7 @@ function loadInfo(){
 }
 function loadInfoSearch(){
     var city = $(".search").val()
-    var queryURL =  "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL =  "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         url: queryURL,
         method:"GET"
@@ -176,13 +176,13 @@ function loadInfoSearch(){
             $(".date").html(response.name+ "  " +date)
             $(".temp").html("Temperature: " + temp + "°F")
             $(".humidity").html("Humidity: " + response.main.humidity + "%")
-            var icon = $("<img src = 'http://openweathermap.org/img/wn/" + weather + "@2x.png'>")
+            var icon = $("<img src = 'https://openweathermap.org/img/wn/" + weather + "@2x.png'>")
             $(".icon").html("")
             $(".icon").append(icon)
             $(".wind").html("Wind Speed: "+response.wind.speed+"MPH")
             var lat = response.coord.lat
             var lon = response.coord.lon
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+            var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat="+lat+"&&lon="+lon+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
             $.ajax({
                 url: queryURL,
                 method:"GET"
@@ -202,7 +202,7 @@ function loadInfoSearch(){
             
     })
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid=ccf5e1046d2ba06be2c7b1b738a2bda0"
     $.ajax({
         url: queryURL,
         method:"GET"
@@ -214,7 +214,7 @@ function loadInfoSearch(){
             $(".date"+i).html(date)
             $(".temp"+i).html("Temperature: " + temp + "°F")
             $(".humidity"+i).html("Humidity: " + response.list[i].main.humidity + "%")
-            var icon = $("<img src = 'http://openweathermap.org/img/wn/" + weather + ".png'>")
+            var icon = $("<img src = 'https://openweathermap.org/img/wn/" + weather + ".png'>")
             $(".icon"+i).html("")
             $(".icon"+i).append(icon)
         }
